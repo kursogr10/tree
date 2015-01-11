@@ -1,0 +1,18 @@
+
+
+
+
+insert into kategori VALUES (1,'Kategoriler',0);
+insert into kategori VALUES (2,'Donanım',1);
+insert into kategori VALUES (3,'Monitör',2);
+insert into kategori VALUES (4,'Klavye',2);
+insert into kategori VALUES (5,'Telefon',2);
+insert into kategori VALUES (6,'Yazılım',1);
+insert into kategori VALUES (7,'Java',6);
+insert into kategori VALUES (8,'Android',6);
+insert into kategori VALUES (9,'Java Web',1);
+insert into kategori VALUES (10,'Tag',9);
+insert into kategori VALUES (11,'Seam',9);
+insert into kategori VALUES (12,'PrimeFaces',7);
+insert into kategori VALUES (13,'DocNet',7);
+insert into kategori VALUES (14,'C#',13);

@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>PrimeFaces</title>
+            </f:facet>
+        </h:head>
+        <h:body>
+            <h:form id="form">
+                <p:growl id="messages" showDetail="true" />
+                <p:panel id="panelId">
+                    <p:tree value="#{nodeBean.root}" var="node" dynamic="true"
+                            selectionMode="single" selection="#{nodeBean.selectedNode}">
+                        <p:ajax event="select" update=":form:messages" listener="#{nodeBean.secilenNode}" />
+                        <p:treeNode>
+                            <h:outputText value="#{node}"/>
+                        </p:treeNode>
+                    </p:tree>               
+                </p:panel>
+            </h:form>  
+        </h:body>
+    </f:view>
+</html>
+
