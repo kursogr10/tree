@@ -8,7 +8,6 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import org.primefaces.event.NodeSelectEvent;
@@ -17,10 +16,9 @@ import org.primefaces.model.TreeNode;
 
 @ManagedBean
 @RequestScoped
-public class NodeBean {
+public class TreeBean {
     
-    @ManagedProperty(value = "#{treeDao}")
-    private TreeDao treeDao;
+    private TreeDao treeDao = new TreeDao();
     
     private TreeNode root;
     private TreeNode donanim;
@@ -96,7 +94,7 @@ public class NodeBean {
     }
 
     public static void setAraListe(List<Kategori> araListe) {
-        NodeBean.araListe = araListe;
+        TreeBean.araListe = araListe;
     }
 
     public List<Kategori> getSubList2() {

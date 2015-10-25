@@ -12,6 +12,8 @@ public class Kategori  implements java.io.Serializable {
      private int kategoriId;
      private String kategoriAdi;
      private int katUstId;
+     private char anaKatMi;
+     private String hedef;
 
     public Kategori() {
     }
@@ -49,6 +51,26 @@ public class Kategori  implements java.io.Serializable {
     public void setKatUstId(int katUstId) {
         this.katUstId = katUstId;
     }
+
+    @Column(name="anaKatMi")
+    public char getAnaKatMi() {
+        return anaKatMi;
+    }
+
+    public void setAnaKatMi(char anaKatMi) {
+        this.anaKatMi = anaKatMi;
+    }
+
+    @Column(name="hedef")
+    public String getHedef() {
+        return hedef;
+    }
+
+    public void setHedef(String hedef) {
+        this.hedef = hedef;
+    }
+    
+    
 }
 
 

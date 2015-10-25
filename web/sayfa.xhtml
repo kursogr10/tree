@@ -15,14 +15,7 @@
         <h:body>
             <ui:composition template="template.xhtml">   
                 <ui:define name="content">
-                    <p:growl id="messages" showDetail="true" />
-                    <p:tree value="#{treeBean.root}" var="node" dynamic="true"
-                            selectionMode="single" selection="#{treeBean.selectedNode}">
-                        <p:ajax event="select" update="form:messages" listener="#{treeBean.secilenNode}" />
-                        <p:treeNode>
-                            <h:outputText value="#{node}"/>
-                        </p:treeNode>
-                    </p:tree>  
+                    Sayfa 
                 </ui:define>   
             </ui:composition>
 

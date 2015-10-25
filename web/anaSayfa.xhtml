@@ -9,20 +9,15 @@
         <h:head>
             <f:facet name="first">
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
-                <title>Tree</title>
+                <title>PrimeFaces</title>
             </f:facet>
         </h:head>
         <h:body>
             <ui:composition template="template.xhtml">   
                 <ui:define name="content">
-                    <p:growl id="messages" showDetail="true" />
-                    <p:tree value="#{treeBean.root}" var="node" dynamic="true"
-                            selectionMode="single" selection="#{treeBean.selectedNode}">
-                        <p:ajax event="select" update="form:messages" listener="#{treeBean.secilenNode}" />
-                        <p:treeNode>
-                            <h:outputText value="#{node}"/>
-                        </p:treeNode>
-                    </p:tree>  
+                    <h:form id="form">
+                        <p:outputLabel>Template</p:outputLabel>
+                    </h:form>  
                 </ui:define>   
             </ui:composition>
 

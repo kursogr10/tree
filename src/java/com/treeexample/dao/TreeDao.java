@@ -3,13 +3,10 @@ package com.treeexample.dao;
 import com.treeexample.util.HibernateUtil;
 import com.treeexample.entity.Kategori;
 import java.util.List;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 
-@ManagedBean
-@RequestScoped
 public class TreeDao {
 
     @SuppressWarnings("null")
@@ -25,7 +22,34 @@ public class TreeDao {
 
             kategoriListesi = session.createCriteria(Kategori.class).list();
 
-            tx.commit();
+            tx.rollback();
+            return kategoriListesi;
+
+        } catch (Exception e) {
+
+            tx.rollback();
+            e.getMessage();
+            return kategoriListesi;
+
+        } finally {
+            session.close();
+        }
+    }
+
+    @SuppressWarnings("null")
+    public List<Kategori> getirKategoriListesi(int katUstId) {
+
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction tx = null;
+        List<Kategori> kategoriListesi = null;
+
+        try {
+
+            tx = session.beginTransaction();
+
+            kategoriListesi = session.createCriteria(Kategori.class).add(Restrictions.eq("katUstId", katUstId)).list();
+
+            tx.rollback();
             return kategoriListesi;
 
         } catch (Exception e) {
