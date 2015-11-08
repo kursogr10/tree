@@ -1,0 +1,29 @@
+.ui-widget, .ui-widget .ui-widget {
+    font-size: 95%;
+}
+
+.ui-layout-pane-center {
+    border: none;
+}
+
+.left {
+	width: 20%;
+	height: 100%;
+	float: left;
+}
+
+.center {
+	width: 59%;
+	height: 100%;
+	float: left;
+	position: relative;
+        text-align: center;
+}
+
+.right {
+	width: 20%;
+	height: 100%;
+	float: left;
+	position: relative;
+        text-align: right;
+}

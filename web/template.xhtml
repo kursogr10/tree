@@ -6,21 +6,24 @@
       xmlns:p="http://primefaces.org/ui">
 
     <f:view contentType="text/html">
-            <h:form id="form">
-                <p:layout fullPage="true" >
-                    <p:layoutUnit position="north" size="100">
-                        <h:outputText value="Başlık" />
-                    </p:layoutUnit>
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <p:layout fullPage="true" >
+            <p:layoutUnit position="north" size="90" >
+                <div class="left">Left</div>
+                <div class="center"><p:outputLabel value="Center"/></div>
+                <div class="right">Right</div>
+            </p:layoutUnit>
 
-                    <p:layoutUnit position="west" size="200" >
-                        <p:panelMenu model="#{menuBean.model}"></p:panelMenu>
-                    </p:layoutUnit>
+            <p:layoutUnit position="west" size="200" header="Proje Adı" collapsible="true" >
+                <h:form>
+                    <p:panelMenu model="#{menuBean.model}"></p:panelMenu>
+                </h:form>
+            </p:layoutUnit>
 
-                    <p:layoutUnit position="center" styleClass="layoutUnitCenter" >
-                        <ui:insert name="content" />
-                    </p:layoutUnit>
-                </p:layout>
-            </h:form>  
+            <p:layoutUnit position="center" styleClass="layoutUnitCenter" >
+                <ui:insert name="content" />
+            </p:layoutUnit>
+        </p:layout>
     </f:view>
 </html>
 

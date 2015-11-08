@@ -28,9 +28,7 @@ public class MenuBean {
 
     public void setPage(String page) {
         this.page = page;
-    }
-    
-    
+    }    
 
     @PostConstruct
     private void init() {
@@ -38,7 +36,7 @@ public class MenuBean {
         page="anaSayfa.xhtml";
         liste = new ArrayList<>();
         model = new DefaultMenuModel();
-        liste = treeDao.getirKategoriListesi(0);
+        liste = treeDao.getirKategoriListesiHQL(0);
         for (Kategori menu : liste) {
 
             if (menu.getAnaKatMi() == '1') {
@@ -53,7 +51,7 @@ public class MenuBean {
 
         try {
 
-            liste = treeDao.getirKategoriListesi(id);
+            liste = treeDao.getirKategoriListesiHQL(id);
 
             for (Kategori menu : liste) {
 

@@ -15,6 +15,7 @@
         <h:body>
             <ui:composition template="template.xhtml">   
                 <ui:define name="content">
+                     <h:form id="form">
                     <p:growl id="messages" showDetail="true" />
                     <p:tree value="#{treeBean.root}" var="node" dynamic="true"
                             selectionMode="single" selection="#{treeBean.selectedNode}">
@@ -22,7 +23,8 @@
                         <p:treeNode>
                             <h:outputText value="#{node}"/>
                         </p:treeNode>
-                    </p:tree>  
+                    </p:tree> 
+                     </h:form>
                 </ui:define>   
             </ui:composition>
 
